@@ -1,3 +1,4 @@
+import { HomeModule } from './home/home.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
@@ -12,7 +13,8 @@ import { HeroListModule } from './hero-list/hero-list.module';
     CommonModule,
     HeroAddModule,
     HeroDetailsModule,
-    HeroListModule
+    HeroListModule,
+    HomeModule,
   ]
 })
 export class PagesModule { }

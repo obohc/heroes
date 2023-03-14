@@ -1,0 +1,12 @@
+.action-buttons-cnt{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  button:not(:last-child) {
+    margin-right: 1rem;
+  }
+}
+
+th:last-of-type { text-align: center; }
+td { padding: 0.75rem; }
