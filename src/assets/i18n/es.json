@@ -1,0 +1,39 @@
+{
+  "button": {
+    "add": "Agregar",
+    "add_hero": "Agregar nuevo héroe",
+    "back": "Volver",
+    "no": "No",
+    "update": "Actualizar",
+    "yes": "Sí"
+  },
+  "headings":{
+    "add": "Agregar héroe",
+    "edit": "Editar héroe",
+    "details": "Detalles del héroe"
+  },
+  "input": {
+    "alter_ego": "Alter ego",
+    "characters": "Personaje(s)",
+    "first_appearance": "Primera aparición",
+    "publisher": "Creador",
+    "search": "Buscar",
+    "superhero": "Superhéroe"
+  },
+  "th": {
+    "actions": "Acciones",
+    "alter_ego": "Alter ego",
+    "hero": "Héroe",
+    "publisher": "Creador"
+  },
+  "dialog": {
+    "deletion": {
+      "header": "Confirmación",
+      "msg": "¿Seguro que quieres borrar al héroe <strong>{{superhero}}</strong>?"
+    }
+  },
+  "snackbar": {
+    "upd": "Héroe actualizado correctamente",
+    "add": "Héroe añadido correctamente"
+  }
+}

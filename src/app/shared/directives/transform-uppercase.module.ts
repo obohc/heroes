@@ -7,7 +7,7 @@ import { TransformUppercaseDirective } from './transform-uppercase.directive';
 @NgModule({
   declarations: [TransformUppercaseDirective],
   imports: [
-    CommonModule
+    CommonModule,
   ],
   exports: [TransformUppercaseDirective]
 })

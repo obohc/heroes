@@ -1,8 +1,6 @@
 import { Component, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
-import { Hero } from './../../../heroes/models/hero';
-
 @Component({
   selector: 'app-confirmation-window',
   templateUrl: './confirmation-window.component.html',
@@ -11,7 +9,7 @@ import { Hero } from './../../../heroes/models/hero';
 export class ConfirmationWindowComponent {
   constructor(
     private dialogRef: MatDialogRef<ConfirmationWindowComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: Hero
+    @Inject(MAT_DIALOG_DATA) public superhero: string
   ) {}
 
   public confirmDeletion(): void { 

@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { MatPaginator } from '@angular/material/paginator';
-import { MatTableDataSource, MatTableDataSourcePaginator } from '@angular/material/table';
+import { MatTableDataSource } from '@angular/material/table';
 
 import { HeroesService } from '../../services/heroes.service';
 import { Hero } from '../../models/hero';
@@ -26,7 +26,7 @@ export class HeroListComponent implements OnInit {
   
   
   public deleteHero(hero: Hero): void {
-    const dialog = this.dialog.open(ConfirmationWindowComponent, {width: "300px", data: hero});
+    const dialog = this.dialog.open(ConfirmationWindowComponent, {width: "300px", data: hero.superhero});
     
     dialog.afterClosed().subscribe((confirmation: boolean) => {      
       if (confirmation) this.heroesAPI.deleteHero(hero.id).subscribe(() => this.getHeroesList());

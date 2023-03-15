@@ -3,6 +3,7 @@ import {
   Component,
   ElementRef,
   EventEmitter,
+  Input,
   Output,
   ViewChild,
 } from '@angular/core';
@@ -15,6 +16,7 @@ import { debounceTime, distinctUntilChanged, fromEvent, map } from 'rxjs';
 })
 export class SearchComponent implements AfterViewInit {
   @ViewChild('input') inputRef!: ElementRef<HTMLInputElement>;
+  @Input() label: string = "";
   @Output() onUserInput: EventEmitter<string> = new EventEmitter<string>();
 
   ngAfterViewInit(): void {

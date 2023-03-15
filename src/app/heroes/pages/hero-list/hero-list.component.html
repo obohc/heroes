@@ -1,30 +1,30 @@
 <div class="container-fs">
   
   <div class="topbar">
-    <button routerLink="/heroes/new" mat-raised-button color="accent">Añadir nuevo héroe</button>  
-    <app-search (onUserInput)="filterList($event)"></app-search>
+    <button routerLink="/heroes/new" mat-raised-button color="accent">{{ "button.add_hero" | translate }} </button>  
+    <app-search (onUserInput)="filterList($event)" label="{{ 'input.search' | translate }}"></app-search>
   </div>
 
   <div class="mat-elevation-z8">
     <table mat-table [dataSource]="dataSource!">
   
       <ng-container matColumnDef="superhero">
-        <th mat-header-cell *matHeaderCellDef> Héroe </th>
+        <th mat-header-cell *matHeaderCellDef> {{ "th.hero" | translate }} </th>
         <td mat-cell *matCellDef="let element"> {{element.superhero}} </td>
       </ng-container>
       
       <ng-container matColumnDef="alter_ego">
-        <th mat-header-cell *matHeaderCellDef> Alter ego </th>
+        <th mat-header-cell *matHeaderCellDef> {{ "th.alter_ego" | translate }} </th>
         <td mat-cell *matCellDef="let element"> {{element.alter_ego}} </td>
       </ng-container>
   
       <ng-container matColumnDef="publisher">
-        <th mat-header-cell *matHeaderCellDef> Creador </th>
+        <th mat-header-cell *matHeaderCellDef> {{ "th.publisher" | translate }} </th>
         <td mat-cell *matCellDef="let element"> {{element.publisher}} </td>
       </ng-container>  
 
       <ng-container matColumnDef="actions">
-        <th mat-header-cell *matHeaderCellDef> Acciones </th>
+        <th mat-header-cell *matHeaderCellDef> {{ "th.actions" | translate }} </th>
         <td mat-cell *matCellDef="let element"> 
           <div class="action-buttons-cnt">
             <button routerLink="/heroes/{{element.id}}/edit" mat-mini-fab color="accent" aria-label="edit button" (click)="$event.stopPropagation()">

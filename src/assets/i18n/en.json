@@ -1,0 +1,39 @@
+{
+  "button": {
+    "add": "Add",
+    "add_hero": "Add new hero",
+    "back": "Back",
+    "no": "No",
+    "update": "Update",
+    "yes": "Yes"
+  },
+  "headings":{
+    "add": "Add hero",
+    "edit": "Edit hero",
+    "details": "Hero details"
+  },
+  "input": {
+    "alter_ego": "Alter ego",
+    "characters": "Characters",
+    "first_appearance": "First appearance",
+    "publisher": "Publisher",
+    "search": "Search",
+    "superhero": "Superhero"
+  },
+  "th": {
+    "actions": "Actions",
+    "alter_ego": "Alter ego",
+    "hero": "Hero",
+    "publisher": "Publisher"
+  },
+  "dialog": {
+    "deletion": {
+      "header": "Confirmation",
+      "msg": "This will permanently delete <strong>{{superhero}}</strong>. Are you sure?"
+    }
+  },
+  "snackbar": {
+    "upd": "Hero updated successfully",
+    "add": "Hero added successfully"
+  }
+}

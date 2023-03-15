@@ -1,8 +1,8 @@
-<h1 mat-dialog-title>Confirmación</h1>
+<h1 mat-dialog-title> {{ "dialog.deletion.header" | translate }} </h1>
 <div mat-dialog-content>
-  <p>¿Seguro que quieres borrar al héroe <strong>{{data.superhero}}</strong>?</p>
+  <p [innerHTML]="'dialog.deletion.msg' | translate:{superhero}"></p>
 </div>
 <div mat-dialog-actions align="end">
-  <button mat-button cdkFocusInitial (click)="cancelDeletion()">No</button>
-  <button mat-button (click)="confirmDeletion()">Sí</button>
+  <button mat-button cdkFocusInitial (click)="cancelDeletion()">{{ "button.no" | translate }}</button>
+  <button mat-button (click)="confirmDeletion()">{{ "button.yes" | translate }}</button>
 </div>

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute, Router } from '@angular/router';
+import { TranslateService } from '@ngx-translate/core';
 
 import { Hero } from '../../models/hero';
 import { HeroesService } from '../../services/heroes.service';
@@ -23,6 +24,7 @@ export class HeroAddComponent implements OnInit {
     private route: ActivatedRoute,
     private router: Router,
     private snackBar: MatSnackBar,
+    private translate: TranslateService
   ) {
     this.form = this.fb.group({
       id: [''],
@@ -59,13 +61,13 @@ export class HeroAddComponent implements OnInit {
   public submit(): void {
     if (this.isEditing) {  
       this.heroesService.editHero(this.form.value).subscribe( () => {
-        this.showSnackBar("Héroe actualizado");
+        this.showSnackBar(this.translate.instant("snackbar.upd"));
         this.router.navigateByUrl("/");        
       });
     }
     else {
       this.heroesService.addHero(this.form.value).subscribe((hero: Hero) => {
-          this.showSnackBar("Héroe guardado");
+          this.showSnackBar(this.translate.instant("snackbar.add"));
           this.router.navigateByUrl("/");
       });      
     }  
