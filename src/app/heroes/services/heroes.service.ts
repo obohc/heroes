@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { map, Observable, tap } from 'rxjs';
+import { map, Observable } from 'rxjs';
 import { environment } from 'src/environments/environment.development';
 
 import { Hero } from '../models/hero';
@@ -36,7 +36,6 @@ export class HeroesService {
   }
 
   deleteHero(id: string) {
-    console.log("esta es la url que usaré", `${this.API_URL}/heroes/${id}`);
     return this.http.delete(`${this.API_URL}/heroes/${id}`);
   }
 

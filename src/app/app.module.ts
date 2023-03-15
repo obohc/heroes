@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { PagesModule } from './heroes/pages/pages.module';
 import { MenuModule } from './shared/components/menu/menu.module';
+import { LoadingSpinnerInterceptor } from './shared/interceptors/loading-spinner.interceptor';
 
 @NgModule({
   declarations: [
@@ -17,10 +17,15 @@ import { MenuModule } from './shared/components/menu/menu.module';
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    MenuModule,
-    PagesModule
+    MenuModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: LoadingSpinnerInterceptor,
+      multi: true,
+    },
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

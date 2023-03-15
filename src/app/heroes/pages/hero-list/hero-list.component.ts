@@ -16,13 +16,12 @@ export class HeroListComponent implements OnInit {
 
   @ViewChild(MatPaginator) private paginator?: MatPaginator;
   private heroes: Hero[] = [];
-  displayedColumns: string[] = ['superhero', 'publisher', 'alter_ego', 'characters', 'first_appearance', 'actions'];
+  displayedColumns: string[] = ['superhero', 'publisher', 'alter_ego', 'actions'];
   dataSource?: MatTableDataSource<Hero, MatTableDataSourcePaginator>;
 
   constructor(private heroesAPI: HeroesService, private dialog: MatDialog) { }
   
   ngOnInit() {
-    //TODO: meterle un pipe y activar el loading
     this.getHeroesList();
   }
   
@@ -35,9 +34,8 @@ export class HeroListComponent implements OnInit {
     });
   }
 
-  filter(event: Event) {
-    const filterValue = (event.target as HTMLInputElement).value;
-    this.heroesAPI.search(filterValue).subscribe( (filteredHeroes: Hero[]) => this.updateTableDataSource(filteredHeroes));
+  filter(query: string) {
+    this.heroesAPI.search(query).subscribe( (filteredHeroes: Hero[]) => this.updateTableDataSource(filteredHeroes));
   }
   
   

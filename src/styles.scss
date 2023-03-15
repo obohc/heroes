@@ -13,3 +13,22 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   width: 100%;
   padding: 1rem;
 }
+
+.flex-row{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.p-2 {
+  padding: 1rem;
+}
+
+.me-2 {
+  margin-right: 1rem;
+}
+
+.text-center{
+  text-align: center;
+}

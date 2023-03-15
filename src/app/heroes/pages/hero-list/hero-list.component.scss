@@ -18,3 +18,13 @@ tr{
     background-color: rgb(245, 245, 245) !important;
   }
 }
+
+.topbar{
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+
+  button{
+    margin-right: 2rem;
+  }
+}

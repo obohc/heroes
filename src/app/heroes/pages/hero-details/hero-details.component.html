@@ -1,3 +1,18 @@
-<p>
-  hero-details works!
-</p>
+
+<mat-card>
+  <mat-card-content>
+    <h3> Detalles del héroe </h3>
+    <mat-divider></mat-divider>
+    <mat-list>
+      <mat-list-item> Superhéroe: {{ hero?.superhero }} </mat-list-item>
+      <mat-list-item> Alter ego: {{ hero?.alter_ego }} </mat-list-item>
+      <mat-list-item> Editor: {{ hero?.publisher }} </mat-list-item>
+      <mat-list-item> Personajes: {{ hero?.characters }} </mat-list-item>
+      <mat-list-item> Primera aparición: {{ hero?.first_appearance }} </mat-list-item>
+    </mat-list>
+  
+    <div class="flex-row">
+      <button mat-raised-button color="accent" routerLink="/">Volver</button> 
+    </div>
+  </mat-card-content>
+</mat-card>

@@ -4,8 +4,9 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 
 import { ConfirmationWindowModule } from './../../../shared/components/confirmation-window/confirmation-window.module';
-import { HeroAddComponent } from './hero-add.component';
 import { MaterialModule } from 'src/app/shared/material/material.module';
+import { TransformUppercaseModule } from './../../../shared/directives/transform-uppercase.module';
+import { HeroAddComponent } from './hero-add.component';
 
 
 const routes: Routes = [
@@ -16,10 +17,11 @@ const routes: Routes = [
   declarations: [HeroAddComponent],
   imports: [
     CommonModule,
+    ReactiveFormsModule,
     RouterModule.forChild(routes),
     ConfirmationWindowModule,
-    ReactiveFormsModule,
-    MaterialModule, 
+    MaterialModule,
+    TransformUppercaseModule
   ],
   exports: [HeroAddComponent]
 })

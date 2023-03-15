@@ -177,12 +177,20 @@
       "first_appearance": "testing"
     },
     {
-      "superhero": "test",
+      "superhero": "Aa",
       "publisher": "Marvel Comics",
-      "alter_ego": "test",
-      "characters": "test",
-      "first_appearance": "test",
-      "id": "Weko2XK"
+      "alter_ego": "aa",
+      "characters": "aa",
+      "first_appearance": "aa",
+      "id": "doW_jua"
+    },
+    {
+      "superhero": "AAAa",
+      "publisher": "Marvel Comics",
+      "alter_ego": "aaa",
+      "characters": "aaa",
+      "first_appearance": "aaa",
+      "id": "ofZoqjK"
     }
   ]
 }

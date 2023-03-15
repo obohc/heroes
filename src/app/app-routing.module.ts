@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-//TODO: hacer lo del lazyloading
+
 const routes: Routes = [
-  { path: "heroes", loadChildren: () => import("./heroes/pages/pages.module").then(m => m.PagesModule)},
+  { path: "heroes", loadChildren: () => import("./heroes/heroes.module").then(m => m.HeroesModule)},
   { path: "", redirectTo: "heroes", pathMatch: "full" },
   { path: "**", redirectTo: "heroes", pathMatch: "full" },
 ];
