@@ -1,8 +1,8 @@
-
 <div class="containerr mt-4">
   <mat-card>
     <mat-card-content>
       <h1 class="text-center"> {{ isEditing ? "Editar héroe" : "Agregar nuevo héroe" }}</h1>
+      
       <form [formGroup]="form">
         <div>
           <mat-form-field appearance="fill">
@@ -10,24 +10,28 @@
             <input matInput toUppercase type="text" formControlName="superhero">
           </mat-form-field>
         </div>
+
         <div>
           <mat-form-field appearance="fill">
             <mat-label>Alter ego</mat-label>
             <input matInput type="text" formControlName="alter_ego">
           </mat-form-field>
         </div>
+
         <div>
           <mat-form-field appearance="fill">
             <mat-label>Primera aparición</mat-label>
             <input matInput type="text" formControlName="first_appearance">
           </mat-form-field>
         </div>
+        
         <div>
           <mat-form-field appearance="fill">
             <mat-label>Personajes</mat-label>
             <input matInput type="text" formControlName="characters">
           </mat-form-field>
         </div>
+
         <div>
           <mat-form-field appearance="fill">
             <mat-label>Creador</mat-label>
@@ -37,14 +41,14 @@
             </mat-select>
           </mat-form-field>
         </div>
+
         <div class="flex-row">
           <button routerLink="/" mat-raised-button color="accent" class="me-2">
             <mat-icon>chevron_left</mat-icon> Volver</button>
-          <button mat-raised-button color="accent" class="w-100" (click)="save()">
+          <button mat-raised-button color="accent" (click)="submit()">
             <mat-icon>save</mat-icon> {{ isEditing ? "Actualizar" : "Crear" }} </button>
         </div>
       </form>
     </mat-card-content>
-  </mat-card>
-  
+  </mat-card>  
 </div>

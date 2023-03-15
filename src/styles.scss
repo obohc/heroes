@@ -3,16 +3,12 @@
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
+.p-2 { padding: 1rem; }
+.me-2 { margin-right: 1rem; }
+.text-center{ text-align: center; }
 
-.container { 
-  width: 80%;
-  margin: auto;
-}
-
-.container-fs {
-  width: 100%;
-  padding: 1rem;
-}
+.container { width: 80%; margin: auto; }
+.container-fs { width: 100%; padding: 1rem; }
 
 .flex-row{
   width: 100%;
@@ -21,14 +17,3 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   align-items: center;
 }
 
-.p-2 {
-  padding: 1rem;
-}
-
-.me-2 {
-  margin-right: 1rem;
-}
-
-.text-center{
-  text-align: center;
-}

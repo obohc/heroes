@@ -7,8 +7,9 @@ export class TransformUppercaseDirective{
 
   constructor(private el: ElementRef<HTMLInputElement>) { }
     
-  @HostListener('keyup') onKeyUp() {
+  @HostListener('keyup') 
+  onKeyUp(): void {
     this.el.nativeElement.value = this.el.nativeElement.value.toUpperCase();
   }
-
+  
 }

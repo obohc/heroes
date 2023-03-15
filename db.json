@@ -167,30 +167,6 @@
       "alter_ego": "Arthur Curry",
       "characters": "Arthur Curry",
       "first_appearance": "More Fun Comics #73"
-    },
-    {
-      "id": "6410398fbd65573dadb51389",
-      "superhero": "Testing",
-      "publisher": "DC Comics",
-      "alter_ego": "Testing",
-      "characters": "Testing",
-      "first_appearance": "testing"
-    },
-    {
-      "superhero": "Aa",
-      "publisher": "Marvel Comics",
-      "alter_ego": "aa",
-      "characters": "aa",
-      "first_appearance": "aa",
-      "id": "doW_jua"
-    },
-    {
-      "superhero": "AAAa",
-      "publisher": "Marvel Comics",
-      "alter_ego": "aaa",
-      "characters": "aaa",
-      "first_appearance": "aaa",
-      "id": "ofZoqjK"
     }
   ]
 }

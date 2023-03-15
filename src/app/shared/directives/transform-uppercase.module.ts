@@ -1,7 +1,7 @@
-import { TransformUppercaseDirective } from './transform-uppercase.directive';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
+import { TransformUppercaseDirective } from './transform-uppercase.directive';
 
 
 @NgModule({

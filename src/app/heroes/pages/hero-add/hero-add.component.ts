@@ -25,6 +25,7 @@ export class HeroAddComponent implements OnInit {
     private snackBar: MatSnackBar,
   ) {
     this.form = this.fb.group({
+      id: [''],
       superhero: ['', Validators.required],
       publisher: [''],
       alter_ego: [''],
@@ -44,6 +45,7 @@ export class HeroAddComponent implements OnInit {
     if (id) {
       this.heroesService.getHeroById(id).subscribe((hero: Hero) => {
         this.form.patchValue({
+          id: hero.id,
           superhero: hero.superhero,
           publisher: hero.publisher,
           alter_ego: hero.alter_ego,
@@ -54,19 +56,22 @@ export class HeroAddComponent implements OnInit {
     }
   }
 
-  public save() {
+  public submit(): void {
     if (this.isEditing) {  
-      this.heroesService.editHero(this.form.value).subscribe( () => this.showSnackBar("Héroe actualizado"));
+      this.heroesService.editHero(this.form.value).subscribe( () => {
+        this.showSnackBar("Héroe actualizado");
+        this.router.navigateByUrl("/");        
+      });
     }
     else {
       this.heroesService.addHero(this.form.value).subscribe((hero: Hero) => {
           this.showSnackBar("Héroe guardado");
+          this.router.navigateByUrl("/");
       });      
-    }
-    this.router.navigateByUrl("/");
+    }  
   }
 
-  private showSnackBar(msg: string){
+  private showSnackBar(msg: string): void {
     this.snackBar.open(msg, "OK", { duration: 3000 });
   }
 }

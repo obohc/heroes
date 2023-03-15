@@ -6,6 +6,7 @@ import { Hero } from './../../../heroes/models/hero';
 @Component({
   selector: 'app-confirmation-window',
   templateUrl: './confirmation-window.component.html',
+  styleUrls: ['./confirmation-window.component.scss']
 })
 export class ConfirmationWindowComponent {
   constructor(
@@ -13,11 +14,11 @@ export class ConfirmationWindowComponent {
     @Inject(MAT_DIALOG_DATA) public data: Hero
   ) {}
 
-  confirmDeletion() { 
+  public confirmDeletion(): void { 
     this.dialogRef.close(true);
   }
 
-  cancelDeletion() {
+  public cancelDeletion(): void {
     this.dialogRef.close(false);
   }
 }

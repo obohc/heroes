@@ -3,8 +3,9 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { MaterialModule } from 'src/app/shared/material/material.module';
-import { HeroListComponent } from './hero-list.component';
 import { SearchModule } from 'src/app/shared/components/search/search.module';
+
+import { HeroListComponent } from './hero-list.component';
 
 const routes: Routes = [
   { path: "", component: HeroListComponent },

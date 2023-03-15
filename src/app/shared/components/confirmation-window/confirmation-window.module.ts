@@ -5,7 +5,6 @@ import { MaterialModule } from 'src/app/shared/material/material.module';
 import { ConfirmationWindowComponent } from './confirmation-window.component';
 
 
-
 @NgModule({
   declarations: [ConfirmationWindowComponent],
   imports: [

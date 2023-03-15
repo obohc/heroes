@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { map, Observable } from 'rxjs';
+
 import { environment } from 'src/environments/environment.development';
 
 import { Hero } from '../models/hero';
@@ -11,35 +12,33 @@ import { Hero } from '../models/hero';
 export class HeroesService {
   private API_URL: string = environment.API_URL;
 
-  //TODO: borrar el último héroe del db.json
-
   constructor(private http: HttpClient) {}
 
-  addHero(hero: Hero): Observable<Hero>{
+  public addHero(hero: Hero): Observable<Hero>{
     return this.http.post<Hero>(`${this.API_URL}/heroes`, hero);
   }
 
-  getHeroes(): Observable<Hero[]> {
+  public getHeroes(): Observable<Hero[]> {
     return this.http.get<Hero[]>(`${this.API_URL}/heroes`);
   }
 
-  getHeroesPaginated(page: number): Observable<Hero[]> {
+  public getHeroesPaginated(page: number): Observable<Hero[]> {
     return this.http.get<Hero[]>(`${this.API_URL}/heroes?_page=${page}`);
   }
 
-  getHeroById(id: string): Observable<Hero> {
+  public getHeroById(id: string): Observable<Hero> {
     return this.http.get<Hero>(`${this.API_URL}/heroes/${id}`);
   }
 
-  editHero(hero: Hero) {
+  public editHero(hero: Hero): Observable<Hero> {
     return this.http.patch<Hero>(`${this.API_URL}/heroes/${hero.id}`, hero);
   }
 
-  deleteHero(id: string) {
+  public deleteHero(id: string): Observable<Object> {
     return this.http.delete(`${this.API_URL}/heroes/${id}`);
   }
 
-  search(query: string): Observable<Hero[]> {
+  public search(query: string): Observable<Hero[]> {
     return this.http.get<Hero[]>(`${this.API_URL}/heroes`).pipe(
       map((heroes: Hero[]) => {
         return heroes.filter((hero: Hero) => 

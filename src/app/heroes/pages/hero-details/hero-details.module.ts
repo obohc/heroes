@@ -1,9 +1,10 @@
-import { MaterialModule } from 'src/app/shared/material/material.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterModule, Routes } from '@angular/router';
+
+import { MaterialModule } from 'src/app/shared/material/material.module';
 
 import { HeroDetailsComponent } from './hero-details.component';
-import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   { path: "", component: HeroDetailsComponent},

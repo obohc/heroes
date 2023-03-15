@@ -15,18 +15,17 @@ import { ConfirmationWindowComponent } from 'src/app/shared/components/confirmat
 export class HeroListComponent implements OnInit {
 
   @ViewChild(MatPaginator) private paginator?: MatPaginator;
-  private heroes: Hero[] = [];
   displayedColumns: string[] = ['superhero', 'publisher', 'alter_ego', 'actions'];
-  dataSource?: MatTableDataSource<Hero, MatTableDataSourcePaginator>;
+  dataSource: MatTableDataSource<Hero> = new MatTableDataSource();
 
   constructor(private heroesAPI: HeroesService, private dialog: MatDialog) { }
   
-  ngOnInit() {
+  ngOnInit(): void {
     this.getHeroesList();
   }
   
   
-  deleteHero(hero: Hero){
+  public deleteHero(hero: Hero): void {
     const dialog = this.dialog.open(ConfirmationWindowComponent, {width: "300px", data: hero});
     
     dialog.afterClosed().subscribe((confirmation: boolean) => {      
@@ -34,20 +33,17 @@ export class HeroListComponent implements OnInit {
     });
   }
 
-  filter(query: string) {
+  public filterList(query: string): void {
     this.heroesAPI.search(query).subscribe( (filteredHeroes: Hero[]) => this.updateTableDataSource(filteredHeroes));
   }
-  
-  
-  private getHeroesList(){
+    
+  private getHeroesList(): void {
     this.heroesAPI.getHeroes().subscribe( (heroes: Hero[]) => this.updateTableDataSource(heroes));    
   }
 
-  private updateTableDataSource(newData: Hero[]){    
-    this.heroes = newData;
-    this.dataSource = new MatTableDataSource<Hero>(this.heroes);
+  private updateTableDataSource(newData: Hero[]): void {
+    this.dataSource = new MatTableDataSource<Hero>(newData);
     this.dataSource.paginator = this.paginator!;
   }
-
 
 }
