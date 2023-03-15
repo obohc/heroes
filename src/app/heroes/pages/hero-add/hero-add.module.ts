@@ -1,19 +1,25 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ReactiveFormsModule } from '@angular/forms';
+import { RouterModule, Routes } from '@angular/router';
 
+import { ConfirmationWindowModule } from './../../../shared/components/confirmation-window/confirmation-window.module';
 import { HeroAddComponent } from './hero-add.component';
 import { MaterialModule } from 'src/app/shared/material/material.module';
-import { FormsModule } from '@angular/forms';
-import { RouterModule } from '@angular/router';
 
+
+const routes: Routes = [
+  { path: "", component: HeroAddComponent },
+];
 
 @NgModule({
   declarations: [HeroAddComponent],
   imports: [
-    CommonModule, 
-    FormsModule,
+    CommonModule,
+    RouterModule.forChild(routes),
+    ConfirmationWindowModule,
+    ReactiveFormsModule,
     MaterialModule, 
-    RouterModule
   ],
   exports: [HeroAddComponent]
 })

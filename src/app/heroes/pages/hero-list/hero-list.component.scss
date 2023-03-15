@@ -10,3 +10,11 @@
 
 th:last-of-type { text-align: center; }
 td { padding: 0.75rem; }
+
+tr{
+  cursor: pointer;
+
+  &.mat-mdc-row:hover {
+    background-color: rgb(245, 245, 245) !important;
+  }
+}

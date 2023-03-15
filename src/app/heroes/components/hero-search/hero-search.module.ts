@@ -6,6 +6,7 @@ import { HeroSearchComponent } from './hero-search.component';
   imports: [
     CommonModule
   ],
-  declarations: [HeroSearchComponent]
+  declarations: [HeroSearchComponent],
+  exports: [HeroSearchComponent]
 })
 export class HeroSearchModule { }

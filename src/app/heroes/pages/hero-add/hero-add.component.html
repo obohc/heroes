@@ -1,58 +1,47 @@
-<h1> {{ hero.id ? "Editar héroe" : "Agregar nuevo héroe" }}</h1>
+<h1> {{ isEditing ? "Editar héroe" : "Agregar nuevo héroe" }}</h1>
 
 <div class="containerr mt-4">
-  <div class="row gx-4">
+  <form [formGroup]="form">
     <div class="col-md-6">
-      <div class="row gx-2">
-        <div class="col-md-6">
-          <mat-form-field appearance="fill" class="w-100">
-            <mat-label>Superhéroe</mat-label>
-            <input matInput type="text" [(ngModel)]="hero.superhero" required>
-          </mat-form-field>
-        </div>
-        <div class="col-md-6">
-          <mat-form-field appearance="fill" class="w-100">
-            <mat-label>Alter ego</mat-label>
-            <input matInput type="text" [(ngModel)]="hero.alter_ego" required>
-          </mat-form-field>
-        </div>
-        <div class="col-12">
-          <mat-form-field appearance="fill" class="w-100">
-            <mat-label>Primera aparición</mat-label>
-            <input matInput type="text" [(ngModel)]="hero.first_appearance" required>
-          </mat-form-field>
-        </div>
-        <div class="col-12">
-          <mat-form-field appearance="fill" class="w-100">
-            <mat-label>Personajes</mat-label>
-            <input matInput type="text" [(ngModel)]="hero.characters" required>
-          </mat-form-field>
-        </div>
-        <div class="col-12">
-          <mat-form-field appearance="fill" class="w-100">
-            <mat-label>Creador</mat-label>
-            <mat-select required>
-              <mat-option>DC Comics</mat-option>
-              <mat-option>Marvel Comics</mat-option>
-            </mat-select>
-          </mat-form-field>
-        </div>
-        <div class="col">
-          <button routerLink="/" mat-raised-button color="accent" class="w-100">
-            <mat-icon>chevron_left</mat-icon> Volver</button>
-        </div>
-        <div class="col">
-          <button mat-raised-button color="accent" class="w-100" (click)="save()">
-            <mat-icon>save</mat-icon> {{ isEditing ? "Actualizar" : "Guardar" }} </button>
-        </div>
-        <div class="col" *ngIf="isEditing">
-          <button mat-raised-button color="warn" class="w-100" (click)="delete()">
-            <mat-icon>delete</mat-icon>
-            Borrar
-          </button>
-        </div>
-      </div>
+      <mat-form-field appearance="fill">
+        <mat-label>Superhéroe</mat-label>
+        <input matInput type="text" formControlName="superhero">
+      </mat-form-field>
     </div>
-    
-  </div>
+    <div class="col-md-6">
+      <mat-form-field appearance="fill">
+        <mat-label>Alter ego</mat-label>
+        <input matInput type="text" formControlName="alter_ego">
+      </mat-form-field>
+    </div>
+    <div class="col-12">
+      <mat-form-field appearance="fill">
+        <mat-label>Primera aparición</mat-label>
+        <input matInput type="text" formControlName="first_appearance">
+      </mat-form-field>
+    </div>
+    <div class="col-12">
+      <mat-form-field appearance="fill">
+        <mat-label>Personajes</mat-label>
+        <input matInput type="text" formControlName="characters">
+      </mat-form-field>
+    </div>
+    <div class="col-12">
+      <mat-form-field appearance="fill">
+        <mat-label>Creador</mat-label>
+        <mat-select formControlName="publisher">
+          <mat-option value="DC Comics">DC Comics</mat-option>
+          <mat-option value="Marvel Comics">Marvel Comics</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div class="col">
+      <button routerLink="/" mat-raised-button color="accent" class="w-100">
+        <mat-icon>chevron_left</mat-icon> Volver</button>
+    </div>
+    <div class="col">
+      <button mat-raised-button color="accent" class="w-100" (click)="save()">
+        <mat-icon>save</mat-icon> {{ isEditing ? "Actualizar" : "Crear" }} </button>
+    </div>
+  </form>
 </div>

@@ -175,6 +175,14 @@
       "alter_ego": "Testing",
       "characters": "Testing",
       "first_appearance": "testing"
+    },
+    {
+      "superhero": "test",
+      "publisher": "Marvel Comics",
+      "alter_ego": "test",
+      "characters": "test",
+      "first_appearance": "test",
+      "id": "Weko2XK"
     }
   ]
 }

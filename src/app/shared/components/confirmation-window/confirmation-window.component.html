@@ -1,0 +1,8 @@
+<h1 mat-dialog-title>Confirmación</h1>
+<div mat-dialog-content>
+  <p>¿Seguro que quieres borrar al héroe <strong>{{data.superhero}}</strong>?</p>
+</div>
+<div mat-dialog-actions align="end">
+  <button mat-button cdkFocusInitial (click)="cancelDeletion()">No</button>
+  <button mat-button (click)="confirmDeletion()">Sí</button>
+</div>

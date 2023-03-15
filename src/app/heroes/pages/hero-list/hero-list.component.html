@@ -43,7 +43,7 @@
             <button routerLink="/heroes/{{element.id}}/edit" mat-mini-fab color="accent" aria-label="edit button">
               <mat-icon>edit</mat-icon>
             </button>
-            <button mat-mini-fab color="accent" aria-label="accent button">
+            <button (click)="deleteHero(element)" mat-mini-fab color="accent" aria-label="accent button">
               <mat-icon>delete</mat-icon>
             </button>
           </div>
@@ -51,7 +51,7 @@
       </ng-container>
   
       <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;" ></tr>
     </table>
   
     <mat-paginator [pageSizeOptions]="[10, 20, 30]"

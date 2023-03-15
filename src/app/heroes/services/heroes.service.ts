@@ -36,6 +36,7 @@ export class HeroesService {
   }
 
   deleteHero(id: string) {
+    console.log("esta es la url que usaré", `${this.API_URL}/heroes/${id}`);
     return this.http.delete(`${this.API_URL}/heroes/${id}`);
   }
 
