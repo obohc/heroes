@@ -1,13 +1,15 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 
-import { MaterialModule } from 'src/app/shared/material/material.module';
 import { SearchComponent } from './search.component';
 
 @NgModule({
   imports: [
     CommonModule,
-    MaterialModule
+    MatFormFieldModule,
+    MatInputModule
   ],
   declarations: [SearchComponent],
   exports: [SearchComponent]

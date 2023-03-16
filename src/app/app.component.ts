@@ -3,14 +3,13 @@ import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  templateUrl: './app.component.html'
 })
 export class AppComponent {
   title = 'prueba-w2m';
 
   constructor(private translate: TranslateService) {
     translate.setDefaultLang('en');
-    translate.use('es');
+    translate.use(localStorage.getItem("language") || 'es');
   }
 }

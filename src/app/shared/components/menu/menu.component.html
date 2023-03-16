@@ -1,3 +1,14 @@
 <mat-toolbar>
-  <span>Prueba W2M - Heroes App</span>
+  <div class="flex-row">
+    <span>Prueba W2M - Heroes App</span>
+    <div class="flex-grow"></div>
+    <div class="buttons-cnt">
+      <button mat-mini-fab color="accent" aria-label="accent button" (click)="setLanguage('es')">
+        <mat-icon svgIcon="spanish" aria-hidden="false"></mat-icon>
+      </button>
+      <button mat-mini-fab color="accent" aria-label="accent button" (click)="setLanguage('en')">
+        <mat-icon svgIcon="english" aria-hidden="false"></mat-icon>
+      </button>
+    </div>
+  </div>
 </mat-toolbar>

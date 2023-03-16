@@ -10,10 +10,24 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .container { width: 80%; margin: auto; }
 .container-fs { width: 100%; padding: 1rem; }
 
+.flex-grow{
+  flex-grow: 1;
+}
+
 .flex-row{
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.buttons-cnt{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  button:not(:last-child) {
+    margin-right: 1rem;
+  }
 }
 

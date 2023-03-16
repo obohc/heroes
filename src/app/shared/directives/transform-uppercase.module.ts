@@ -3,9 +3,9 @@ import { CommonModule } from '@angular/common';
 
 import { TransformUppercaseDirective } from './transform-uppercase.directive';
 
-
 @NgModule({
-  declarations: [TransformUppercaseDirective],
+  declarations: [	TransformUppercaseDirective
+   ],
   imports: [
     CommonModule,
   ],

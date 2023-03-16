@@ -22,7 +22,6 @@ import { AppComponent } from './app.component';
     BrowserAnimationsModule,
     HttpClientModule,
     MenuModule,
-    // ngx-translate and the loader module
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,

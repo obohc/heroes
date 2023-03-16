@@ -1,10 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatButtonModule } from '@angular/material/button';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
-import { MaterialModule } from 'src/app/shared/material/material.module';
 import { ConfirmationWindowComponent } from './confirmation-window.component';
 
 
@@ -12,7 +13,8 @@ import { ConfirmationWindowComponent } from './confirmation-window.component';
   declarations: [ConfirmationWindowComponent],
   imports: [
     CommonModule,
-    MaterialModule,
+    MatButtonModule,
+    MatDialogModule,
     TranslateModule.forChild({
       loader: {
         provide: TranslateLoader,

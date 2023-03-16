@@ -2,10 +2,14 @@ import { RouterModule, Routes } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
+import { MatButtonModule } from '@angular/material/button';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatIconModule } from '@angular/material/icon';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatTableModule } from '@angular/material/table';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
-import { MaterialModule } from 'src/app/shared/material/material.module';
 import { SearchModule } from 'src/app/shared/components/search/search.module';
 
 import { HeroListComponent } from './hero-list.component';
@@ -18,6 +22,11 @@ const routes: Routes = [
   declarations: [HeroListComponent],
   imports: [
     CommonModule,
+    MatButtonModule,
+    MatDialogModule,
+    MatIconModule,
+    MatPaginatorModule,
+    MatTableModule,
     RouterModule.forChild(routes),
     TranslateModule.forChild({
       loader: {
@@ -27,7 +36,6 @@ const routes: Routes = [
       }
     }),
     SearchModule,
-    MaterialModule,
     RouterModule
   ],
   exports: [HeroListComponent]

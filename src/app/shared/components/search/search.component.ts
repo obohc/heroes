@@ -11,8 +11,7 @@ import { debounceTime, distinctUntilChanged, fromEvent, map } from 'rxjs';
 
 @Component({
   selector: 'app-search',
-  templateUrl: './search.component.html',
-  styleUrls: ['./search.component.scss'],
+  templateUrl: './search.component.html'
 })
 export class SearchComponent implements AfterViewInit {
   @ViewChild('input') inputRef!: ElementRef<HTMLInputElement>;
