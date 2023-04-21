@@ -38,24 +38,16 @@ export class HeroAddComponent implements OnInit {
 
   ngOnInit(): void {
     this.isEditing = this.router.url.includes("edit");
+    if (!this.isEditing) return;
 
-    if (!this.isEditing) {
-      return;
-    }
-
-    const id = this.route.snapshot.paramMap.get('id');
+    const id = this.route.snapshot.paramMap.get("id");
     if (id) {
-      this.heroesService.getHeroById(id).subscribe((hero: Hero) => {
-        this.form.patchValue({
-          id: hero.id,
-          superhero: hero.superhero,
-          publisher: hero.publisher,
-          alter_ego: hero.alter_ego,
-          characters: hero.characters,
-          first_appearance: hero.first_appearance
-        })
-      })
+      this.heroesService.getHeroById(id).subscribe({
+        next: (hero: Hero) => this.form.patchValue(hero),
+        error: () => this.router.navigateByUrl("/")
+      });
     }
+
   }
 
   public submit(): void {
@@ -66,9 +58,9 @@ export class HeroAddComponent implements OnInit {
       });
     }
     else {
-      this.heroesService.addHero(this.form.value).subscribe((hero: Hero) => {
-          this.showSnackBar(this.translate.instant("snackbar.add"));
-          this.router.navigateByUrl("/");
+      this.heroesService.addHero(this.form.value).subscribe((_) => {
+        this.showSnackBar(this.translate.instant("snackbar.add"));
+        this.router.navigateByUrl("/");
       });      
     }  
   }

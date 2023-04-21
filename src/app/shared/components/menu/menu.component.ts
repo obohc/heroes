@@ -14,8 +14,8 @@ export class MenuComponent {
     private iconRegistry: MatIconRegistry, 
     private sanitizer: DomSanitizer
   ){ 
-    iconRegistry.addSvgIcon('spanish', sanitizer.bypassSecurityTrustResourceUrl('assets/icons/es.svg'));
-    iconRegistry.addSvgIcon('english', sanitizer.bypassSecurityTrustResourceUrl('assets/icons/en.svg'));
+    this.iconRegistry.addSvgIcon('spanish', this.sanitizer.bypassSecurityTrustResourceUrl('assets/icons/es.svg'));
+    this.iconRegistry.addSvgIcon('english', this.sanitizer.bypassSecurityTrustResourceUrl('assets/icons/en.svg'));
   }
 
   public setLanguage(selectedLang: string) {

@@ -6,6 +6,7 @@ import { MatTableDataSource } from '@angular/material/table';
 import { HeroesService } from '../../services/heroes.service';
 import { Hero } from '../../models/hero';
 import { ConfirmationWindowComponent } from 'src/app/shared/components/confirmation-window/confirmation-window.component';
+import { EMPTY, iif, switchMap } from 'rxjs';
 
 @Component({
   selector: 'app-hero-list',
@@ -18,7 +19,7 @@ export class HeroListComponent implements OnInit {
   displayedColumns: string[] = ['superhero', 'publisher', 'alter_ego', 'actions'];
   dataSource: MatTableDataSource<Hero> = new MatTableDataSource();
 
-  constructor(private heroesAPI: HeroesService, private dialog: MatDialog) { }
+  constructor(private heroesService: HeroesService, private dialog: MatDialog) { }
   
   ngOnInit(): void {
     this.getHeroesList();
@@ -28,17 +29,18 @@ export class HeroListComponent implements OnInit {
   public deleteHero(hero: Hero): void {
     const dialog = this.dialog.open(ConfirmationWindowComponent, {width: "300px", data: hero.superhero});
     
-    dialog.afterClosed().subscribe((confirmation: boolean) => {      
-      if (confirmation) this.heroesAPI.deleteHero(hero.id).subscribe(() => this.getHeroesList());
-    });
+    dialog.afterClosed().pipe(
+      switchMap( (res: boolean) => iif ( () => res, this.heroesService.deleteHero(hero.id), EMPTY))
+    )
+    .subscribe( () => this.getHeroesList() )
   }
 
   public filterList(query: string): void {
-    this.heroesAPI.search(query).subscribe( (filteredHeroes: Hero[]) => this.updateTableDataSource(filteredHeroes));
+    this.heroesService.search(query).subscribe( (filteredHeroes: Hero[]) => this.updateTableDataSource(filteredHeroes));
   }
     
   private getHeroesList(): void {
-    this.heroesAPI.getHeroes().subscribe( (heroes: Hero[]) => this.updateTableDataSource(heroes));    
+    this.heroesService.getHeroes().subscribe( (heroes: Hero[]) => this.updateTableDataSource(heroes));    
   }
 
   private updateTableDataSource(newData: Hero[]): void {

@@ -9,7 +9,6 @@ export class AppComponent {
   title = 'prueba-w2m';
 
   constructor(private translate: TranslateService) {
-    translate.setDefaultLang('en');
-    translate.use(localStorage.getItem("language") || 'es');
+    this.translate.use(localStorage.getItem("language") || translate.getDefaultLang());
   }
 }

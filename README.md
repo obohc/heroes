@@ -1,4 +1,4 @@
-# PruebaW2M
+# PruebaHeroes
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.1.6.
 
@@ -8,4 +8,4 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The appli
 
 ## Run fake/local backend server
 
-Run `npm run fake-backend` to be able to do http request from the HeroesService to the backend.
+Run `npm run fake-backend` to be able to do http requests from HeroesService.

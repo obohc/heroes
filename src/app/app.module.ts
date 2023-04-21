@@ -27,7 +27,8 @@ import { AppComponent } from './app.component';
         provide: TranslateLoader,
         useFactory: HttpLoaderFactory,
         deps: [HttpClient]
-      }
+      },
+      defaultLanguage: "es"
     })
   ],
   providers: [
