@@ -8,4 +8,4 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The appli
 
 ## Run fake/local backend server
 
-Run `npm run fake-backend` to be able to do http requests from HeroesService.
+Run `npm run fake-backend` to be able to do http requests and fetch data from the 'backend'.
